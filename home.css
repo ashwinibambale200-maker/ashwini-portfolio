@@ -1,0 +1,317 @@
+/* =========================================
+   3. HOME SECTION (Background Removed)
+========================================= */
+
+section {
+  width: 100%;
+  min-height: 90vh;
+  padding: 80px 25px !important;
+  scroll-margin-top: 70px;
+}
+
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Background color removed so section background shows through */
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1250px;
+  min-height: 65vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 40px;
+}
+
+.main-container .image {
+  width: 45%;
+  min-width: 0;
+}
+
+.main-container .image img {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(74, 44, 0, 0.12));
+  transition: transform 0.4s ease;
+}
+
+.main-container .image img:hover {
+  transform: translateY(-5px);
+}
+
+.main-container .content {
+  width: 45%;
+  min-width: 0;
+  color: #222;
+  font-family: 'Poppins', sans-serif;
+}
+
+.content h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #2c1a00;
+}
+
+.content h1 span {
+  color: #805106;
+  text-shadow: 0 2px 10px rgba(128, 81, 6, 0.15);
+}
+
+.content .typewriter {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #4a2c00;
+}
+
+.content .typewriter span {
+  color: #805106;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  text-shadow: 0 0 5px rgba(128, 81, 6, 0.15);
+  position: relative;
+}
+
+.typewriter span::before {
+  content: "Developer";
+  animation: words 10s infinite;
+}
+
+.typewriter span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid #805106;
+  background: transparent;
+  animation: cursor 0.6s linear infinite;
+}
+
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes words {
+  0%, 33% {
+    content: ".NET Core Developer";
+  }
+  34%, 66% {
+    content: "Full-Stack Engineer";
+  }
+  67%, 100% {
+    content: "AI & Cloud Explorer ";
+  }
+}
+
+.content p {
+  font-size: 1.02rem;
+  margin: 15px 0 22px 0;
+  line-height: 1.8;
+  color: #4a4a4a;
+}
+
+/* Social Links Modern Styling */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin: 22px 0;
+}
+
+.social-links a {
+  text-decoration: none;
+}
+
+.social-links i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid #805106;
+  border-radius: 50%;
+  color: #805106;
+  font-size: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(128, 81, 6, 0.08);
+}
+
+.social-links i:hover {
+  color: #fff;
+  background: #805106;
+  border-color: #805106;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 8px 20px rgba(128, 81, 6, 0.25);
+}
+
+/* Button Refinement */
+.content .btn {
+  margin-top: 20px;
+}
+
+.content .cv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6d4300, #4a2c00);
+  color: #fff;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(74, 44, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.content .cv-btn:hover {
+  background: linear-gradient(135deg, #805106, #6d4300);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(74, 44, 0, 0.3);
+}
+
+/* Responsive Media Query for Mobile Devices */
+@media (max-width: 900px) {
+  #home {
+    min-height: auto;
+    padding: 60px 20px !important;
+  }
+
+  .main-container {
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .main-container .image,
+  .main-container .content {
+    width: 100%;
+  }
+
+  .main-container .image img {
+    width: 75%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .main-container .content h1 {
+    font-size: clamp(2rem, 7vw, 2.5rem);
+  }
+
+  .content .typewriter,
+  .content .typewriter span {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+  }
+
+  .content p {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .content .btn {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+/* Center Alignment Wrapper */
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Center Social Media Icons */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.social-links a {
+  text-decoration: none;
+}
+
+.social-links i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid #805106;
+  border-radius: 50%;
+  color: #805106;
+  font-size: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(128, 81, 6, 0.08);
+}
+
+.social-links i:hover {
+  color: #fff;
+  background: #805106;
+  border-color: #805106;
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 8px 20px rgba(128, 81, 6, 0.25);
+}
+
+/* Center Download CV Button */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6d4300, #4a2c00);
+  color: #fff;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(74, 44, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.cv-btn:hover {
+  background: linear-gradient(135deg, #805106, #6d4300);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(74, 44, 0, 0.3);
+}

@@ -1,0 +1,303 @@
+/* =========================================
+   PROJECTS SECTION STYLES (Matching UI)
+========================================= */
+
+.portfolio-projects-section {
+  width: 100%;
+  padding: 80px 25px;
+}
+
+.projects-container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* Heading Styling */
+.projects-section-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.projects-heading-icon {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.projects-eyebrow {
+  display: inline-block;
+  color: #805106;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  padding: 4px 12px;
+  background: #fff5ec;
+  border-radius: 20px;
+}
+
+/* --- Section Heading (Centered) --- */
+.projects-section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* Centers child items horizontally */
+  text-align: center;       /* Centers all text inside */
+  margin-bottom: 50px;
+}
+
+/* Centers the heading icon */
+.projects-heading-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #f4b433;
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(244, 180, 51, 0.3);
+  margin-bottom: 15px;
+}
+
+/* Centers the underline line beneath the heading */
+.projects-heading-line {
+  width: 50px;
+  height: 3px;
+  background: #f4b433;
+  border-radius: 2px;
+  margin: 0 auto 12px auto; /* 'auto' on left and right centers it */
+}
+
+.projects-section-heading h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: #4a2c00;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.projects-section-heading p {
+  color: #555;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Projects Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 35px;
+  align-items: stretch;
+}
+
+/* Individual Project Card matching screenshot */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid rgba(109, 67, 0, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(109, 67, 0, 0.12);
+}
+
+/* Image Banner Banner Top */
+.project-image-banner {
+  width: 100%;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  background: #f4ecdf;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+
+.project-image-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image-banner img {
+  transform: scale(1.03);
+}
+
+/* Floating Badges */
+.project-type {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  color: #172747;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 20px;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.badge-purple {
+  background: rgba(255, 255, 255, 0.95);
+  color: #4835a2;
+}
+
+/* Content Layout */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 30px;
+}
+
+.project-title {
+  color: #172747;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.35;
+}
+
+.project-description {
+  color: #687791;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+/* Key Features Soft Background Box (matches screenshot) */
+.project-highlights-block {
+  background: #fcf0e3;
+  border: 1px solid #e2ecff;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.project-highlights-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e87532;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.project-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #405575;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.project-highlights li:last-child {
+  margin-bottom: 0;
+}
+
+.project-highlights li i {
+  color: #e87532;
+  margin-top: 4px;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+}
+
+/* Tech Stack Area */
+.project-tech-area {
+  margin-top: auto;
+  padding-top: 5px;
+}
+
+.project-tech-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #63738f;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.project-tech-label i {
+  color: #e87532;
+}
+
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  padding: 6px 12px;
+  background: #f0f4ff;
+  color: #245cc5;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .portfolio-projects-section {
+    padding: 60px 15px;
+  }
+}
+
+/* =========================================
+   TECHNOLOGY TAGS INTERACTION (Click / Active State)
+========================================= */
+
+.tech-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #fcf0e3;
+  color: #765f19;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.tech-tag:hover {
+  background: #f7b423d5;
+}
+
+/* Click / Active / Focus State matching your screenshot */
+.tech-tag:active,
+.tech-tag:focus,
+.tech-tag.active {
+  background: #a0522d; /* Rich brown tone from screenshot */
+  color: #ffffff;
+  border-color: #a0522d;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(160, 82, 45, 0.25);
+}
