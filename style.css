@@ -1,0 +1,729 @@
+
+/* =========================================
+   1. GOOGLE FONT AND GLOBAL STYLES
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+  overflow-x: clip;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 70px;
+  overflow-x: clip;
+  background: linear-gradient(to right, #ffffff, #fed7ad);
+  color: #222;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  overflow-wrap: anywhere;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.3;
+  overflow-wrap: break-word;
+}
+
+p,
+li {
+  line-height: 1.7;
+}
+
+/* =========================================
+   2. NAVIGATION BAR
+========================================= */
+
+nav {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #ffe9d2, #c9b198);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  padding: 0 30px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  color: #222;
+  font-size: 1.5rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.logo span {
+  color: #6d4300;
+  text-shadow: 0 0 10px rgba(109, 67, 0, 0.2);
+}
+
+.nav-container > .links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(12px, 2vw, 30px);
+}
+
+.nav-container .links .link a {
+  position: relative;
+  display: inline-block;
+  color: #222;
+  text-decoration: none;
+  font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-container .links .link a::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #6d4300;
+  transition: width 0.3s ease;
+}
+
+.nav-container .links .link a:hover::before {
+  width: 100%;
+}
+
+.nav-container .links .link a:hover {
+  color: #6d4300;
+}
+
+.nav-container .contact-btn {
+  padding: 7px 15px;
+  border: 2px solid #6d4300;
+  border-radius: 25px;
+  transition: background 0.3s ease;
+}
+
+.nav-container .contact-btn:hover {
+  background: #6d4300;
+}
+
+.nav-container .contact-btn:hover a {
+  color: #fff;
+}
+
+.hamburg,
+.cancel {
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #222;
+}
+
+.hamburg {
+  display: none;
+}
+
+.cancel {
+  display: none;
+}
+
+/* Mobile dropdown menu - hidden by default */
+
+.dropdown {
+  display: none;
+}
+
+
+
+/* =========================================
+   9. FOOTER
+========================================= */
+
+footer {
+  width: 100%;
+  overflow-wrap: anywhere;
+}
+
+footer a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+  color: #f09a3e !important;
+}
+
+/* =========================================
+   10. TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1000px) {
+  .nav-container {
+    padding: 0 20px;
+  }
+
+  .nav-container > .links {
+    gap: 13px;
+  }
+
+  .nav-container .links .link a {
+    font-size: 0.85rem;
+  }
+
+  .logo h2 {
+    font-size: 20px !important;
+  }
+
+  .main-container {
+    gap: 25px;
+  }
+
+  .main-container .image {
+    width: 45%;
+  }
+
+  .main-container .content {
+    width: 50%;
+  }
+
+  .service-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================
+   11. MOBILE NAVIGATION AND LAYOUT
+========================================= */
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 65px;
+  }
+
+  body {
+    padding-top: 60px;
+  }
+
+  nav {
+    height: 60px;
+  }
+
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 18px;
+    gap: 10px;
+  }
+
+  .logo {
+    max-width: calc(100% - 45px);
+  }
+
+  .logo h2 {
+    font-size: 18px !important;
+  }
+
+  .nav-container > .links {
+    display: none !important;
+  }
+
+  .hamburg {
+    display: block;
+    position: static;
+    flex-shrink: 0;
+    font-size: 25px;
+    padding: 5px;
+  }
+
+  /* Full-screen mobile menu */
+  .dropdown {
+    display: block;
+    position: fixed;
+    inset: 60px 0 0;
+    z-index: 2000;
+    width: 100%;
+    height: calc(100dvh - 60px);
+    overflow-y: auto;
+    padding: 20px;
+    background: #fff5ec;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-110%);
+    transition: transform 0.3s ease;
+  }
+
+  .dropdown .links {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 5px;
+    padding: 20px 0;
+  }
+/* 
+  .dropdown .links a {
+    display: block;
+    width: 100%;
+    padding: 13px 10px;
+    color: #4a2c00;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.05rem;
+    border-radius: 6px;
+  } */
+
+  /* .dropdown .links a:hover {
+    background: #6d4300;
+    color: #fff;
+  } */
+
+  /* .dropdown .cancel {
+    display: block;
+    position: static;
+    align-self: center;
+    margin: 15px auto 0;
+    padding: 8px;
+    color: #4a2c00;
+    font-size: 26px;
+  } */
+
+  section {
+    min-height: auto !important;
+    padding: 60px 20px !important;
+    scroll-margin-top: 60px;
+  }
+
+  
+
+  /* Footer */
+  footer > div {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  footer > div > div:first-child {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px !important;
+  }
+}
+
+/* =========================================
+   12. SMALL MOBILE PHONES
+========================================= */
+
+@media (max-width: 380px) {
+  .nav-container {
+    padding: 0 12px;
+  }
+
+  .logo h2 {
+    font-size: 15px !important;
+  }
+
+  section {
+    padding: 45px 15px !important;
+  }
+
+  .main-container .image img {
+    width: 95%;
+    max-width: 260px;
+  }
+
+  .main-container .content h1 {
+    font-size: 1.9rem;
+  }
+
+  .content .typewriter,
+  .content .typewriter span {
+    font-size: 1.05rem;
+  }
+
+  .social-links {
+    gap: 8px;
+  }
+
+  .social-links i {
+    width: 40px;
+    height: 40px;
+    font-size: 1.15rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 15px;
+  }
+
+  .circle-skill {
+    width: 80px;
+    height: 80px;
+    flex-basis: 80px;
+  }
+}
+
+/* =========================================
+   13. ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+
+
+/* Skill Chips */
+.chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  background: #f1f3f5;
+  color: #495057;
+  font-size: 0.73rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.bg-chip-green  { background: #f0fdf4; color: #15803d; }
+.bg-chip-purple { background: #faf5ff; color: #7e22ce; }
+
+/* Quote Box & Watermark */
+.edu-quote-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  padding: 16px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  border: 1px solid rgba(220, 200, 180, 0.4);
+  margin-top: 25px;
+}
+
+.edu-quote-box p {
+  margin: 0;
+  font-style: italic;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.watermark-text {
+  text-align: right;
+  font-style: italic;
+  font-weight: 600;
+  color: #888;
+  font-size: 0.95rem;
+  margin-top: 15px;
+  letter-spacing: 0.5px;
+}
+
+
+
+
+/* =========================================
+   2. NAVIGATION BAR
+========================================= */
+
+nav {
+  width: 100%;
+  height: 75px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #ffe9d2, #c9b198);
+  box-shadow: 0 4px 20px rgba(74, 44, 0, 0.08);
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1350px;
+  height: 100%;
+  padding: 0 30px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.logo {
+  color: #222;
+  flex-shrink: 0;
+}
+
+.logo span {
+  color: #6d4300;
+  text-shadow: 0 0 10px rgba(109, 67, 0, 0.2);
+}
+
+.nav-container > .links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(12px, 1.5vw, 24px);
+}
+
+.nav-container .links .link a {
+  position: relative;
+  display: inline-block;
+  color: #2c1a00;
+  text-decoration: none;
+  font-size: clamp(0.85rem, 0.95vw, 1rem);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-container .links .link a::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  background: #6d4300;
+  transition: width 0.3s ease;
+}
+
+.nav-container .links .link a:hover::before {
+  width: 100%;
+}
+
+.nav-container .links .link a:hover {
+  color: #6d4300;
+}
+
+.nav-container .contact-btn {
+  padding: 6px 16px;
+  border: 2px solid #6d4300;
+  border-radius: 30px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-container .contact-btn a {
+  color: #e3d7c3;
+  font-weight: 600;
+}
+
+.nav-container .contact-btn:hover {
+  background: #e9dbba;
+  box-shadow: 0 4px 12px rgba(109, 67, 0, 0.2);
+}
+
+.nav-container .contact-btn:hover a {
+  color: #e3d7c3;
+}
+
+/* Hamburger & Cancel Icons */
+.hamburg {
+  display: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #4a2c00;
+}
+
+.cancel {
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #4a2c00;
+}
+
+/* Mobile Dropdown Menu */
+/* .dropdown {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffe9d2, #c9b198);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  transition: all 0.4s ease-in-out;
+} */
+
+/* .dropdown .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+} */
+
+.dropdown .links a {
+  color: #2c1a00;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.dropdown .links a:hover {
+  color: #6d4300;
+}
+
+.dropdown .cancel {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #4a2c00;
+}
+
+/* Responsive Breakpoint: Switches to Hamburger Menu below 1050px */
+@media (max-width: 1050px) {
+  .nav-container > .links {
+    display: none;
+  }
+  .hamburg {
+    display: block;
+  }
+}
+
+
+
+/* =========================================
+   MOBILE DROPDOWN MENU (FINAL FIX)
+========================================= */
+/* =========================================
+   MOBILE DROPDOWN MENU (Glassmorphic Left Sheet)
+========================================= */
+
+.dropdown {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Hidden off-screen to the left by default */
+  width: 82%; /* Covers most of the screen like a sheet drawer */
+  max-width: 340px;
+  height: 100vh;
+  background: rgba(233, 209, 198, 0.85); /* Semi-transparent sheet background */
+  backdrop-filter: blur(12px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(12px);
+  border-right: 1px solid rgba(224, 192, 158, 0.5);
+  box-shadow: 10px 0 30px rgba(74, 44, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 99999;
+  transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 80px 25px 30px 25px;
+  overflow-y: auto;
+}
+
+.dropdown .links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns text and icons to the left */
+  gap: 16px;
+  width: 100%;
+}
+
+.dropdown .links a {
+  display: flex;
+  align-items: center;
+  gap: 14px; /* Space between symbol and text */
+  color: #4a2c00;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.dropdown .links a i {
+  font-size: 1.15rem;
+  color: #8b4513;
+  width: 24px;
+  text-align: center;
+}
+
+.dropdown .links a:hover {
+  background: rgba(139, 69, 19, 0.1);
+  color: #8b4513;
+  transform: translateX(4px);
+}
+
+/* Close X Mark Button Positioned at Top Right of Sheet */
+.dropdown .cancel {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: #4a2c00;
+  background: rgba(255, 255, 255, 0.6);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.dropdown .cancel:hover {
+  background: #4a2c00;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
