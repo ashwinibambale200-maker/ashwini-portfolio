@@ -1,5 +1,5 @@
 
-fetch("/nav/navigation.html")
+fetch("./navigation.html")
     .then(response => {
         if (!response.ok) {
             throw new Error("Navigation file not found: " + response.status);
@@ -62,67 +62,67 @@ async function loadPortfolio() {
     // 1. Navigation
     await loadSection(
         "navigation-placeholder",
-        "./nav/navigation.html"
+        "./navigation.html"
     );
 
     // 2. Home
     await loadSection(
         "home-placeholder",
-        "./html/home.html"
+        "./home.html"
     );
 
     // 3. About
     await loadSection(
         "about-placeholder",
-        "./html/about.html"
+        "./about.html"
     );
 
     // 4. Technical Skills
     await loadSection(
         "skills-placeholder",
-        "./html/skill.html"
+        "./skill.html"
     );
 
     // 5. Resume / Professional Experience
     await loadSection(
         "resume-placeholder",
-        "./html/resume.html"
+        "./resume.html"
     );
 
     // 6. Software & Development Tools
     await loadSection(
         "software-placeholder",
-        "./html/software.html"
+        "./software.html"
     );
 
     // 7. Professional Experience Projects
     await loadSection(
         "experience-projects-placeholder",
-        "./html/Eproject.html"
+        "./Eproject.html"
     );
 
     // 8. Personal & Academic Projects
     await loadSection(
         "personal-projects-placeholder",
-        "./html/Pproject.html"
+        "./Pproject.html"
     );
 
     // 9. Training & Certifications
     await loadSection(
         "training-placeholder",
-        "./html/training.html"
+        "./training.html"
     );
 
     // 10. Services
     await loadSection(
         "services-placeholder",
-        "./html/service.html"
+        "./service.html"
     );
 
     // 11. Contact
     await loadSection(
         "contact-placeholder",
-        "./html/contact.html"
+        "./contact.html"
     );
 
     // Initialize animations after sections are loaded
