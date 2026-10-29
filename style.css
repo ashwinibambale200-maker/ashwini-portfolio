@@ -727,3 +727,95 @@ nav {
 
 
 
+
+/* Mobile menu: hidden by default */
+.dropdown {
+    position: fixed;
+    top: 0;
+    left: -100;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    background: rgba(233, 209, 198, 0.85); 
+    z-index: 2000;
+    overflow-y: auto;
+
+    transform: translateX(-100%);
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* Open menu */
+.dropdown.active {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    left: 0;
+}
+
+/* Display mobile menu items vertically */
+.dropdown .links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 85px 20px 25px;
+    position: relative;
+}
+.dropdown .links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 280px; /* Adjust width as needed */
+    height: 100%;
+    /* Or your menu background color */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dropdown .links a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    color: #563600;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.dropdown .links a:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* X button */
+.dropdown .cancel {
+    position: absolute;
+    top: 20px;
+    left: 280px;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 10px;
+    color: #563600;
+}
+
+/* Mobile hamburger */
+.hamburg {
+    cursor: pointer;
+    font-size: 30px;
+    color: #563600;
+}
+
+/* Hide desktop links on smaller screens */
+@media (max-width: 900px) {
+    nav .links {
+        display: none;
+    }
+
+    .hamburg {
+        display: block;
+    }
+}
+
