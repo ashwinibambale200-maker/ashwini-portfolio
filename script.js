@@ -1,5 +1,5 @@
 
-fetch("./navigation.html")
+fetch("/nav/navigation.html")
     .then(response => {
         if (!response.ok) {
             throw new Error("Navigation file not found: " + response.status);
@@ -62,67 +62,67 @@ async function loadPortfolio() {
     // 1. Navigation
     await loadSection(
         "navigation-placeholder",
-        "./navigation.html"
+        "./nav/navigation.html"
     );
 
     // 2. Home
     await loadSection(
         "home-placeholder",
-        "./home.html"
+        "./html/home.html"
     );
 
     // 3. About
     await loadSection(
         "about-placeholder",
-        "./about.html"
+        "./html/about.html"
     );
 
     // 4. Technical Skills
     await loadSection(
         "skills-placeholder",
-        "./skill.html"
+        "./html/skill.html"
     );
 
     // 5. Resume / Professional Experience
     await loadSection(
         "resume-placeholder",
-        "./resume.html"
+        "./html/resume.html"
     );
 
     // 6. Software & Development Tools
     await loadSection(
         "software-placeholder",
-        "./software.html"
+        "./html/software.html"
     );
 
     // 7. Professional Experience Projects
     await loadSection(
         "experience-projects-placeholder",
-        "./Eproject.html"
+        "./html/Eproject.html"
     );
 
     // 8. Personal & Academic Projects
     await loadSection(
         "personal-projects-placeholder",
-        "./Pproject.html"
+        "./html/Pproject.html"
     );
 
     // 9. Training & Certifications
     await loadSection(
         "training-placeholder",
-        "./training.html"
+        "./html/training.html"
     );
 
     // 10. Services
     await loadSection(
         "services-placeholder",
-        "./service.html"
+        "./html/service.html"
     );
 
     // 11. Contact
     await loadSection(
         "contact-placeholder",
-        "./contact.html"
+        "./html/contact.html"
     );
 
     // Initialize animations after sections are loaded
@@ -150,17 +150,29 @@ async function loadPortfolio() {
 function hamburg() {
     const dropdown = document.querySelector(".dropdown");
     if (dropdown) {
-        dropdown.style.left = "0"; // Slides menu into view from the left
+        dropdown.classList.add("active"); // Slides menu into view from the left
     }
 }
 
 function cancel() {
     const dropdown = document.querySelector(".dropdown");
     if (dropdown) {
-        dropdown.style.left = "-100%"; // Slides menu completely hidden off-screen
+        dropdown.classList.remove("active"); // Slides menu completely hidden off-screen
     }
 }
 
+// Close menu when clicking outside of it
+window.addEventListener("click", function (event) {
+    const dropdown = document.querySelector(".dropdown");
+    const hamburgBtn = document.querySelector(".hamburg");
+    
+    if (dropdown && dropdown.classList.contains("active")) {
+        // Check if the click is outside the dropdown AND not on the hamburger button
+        if (!dropdown.contains(event.target) && !hamburgBtn.contains(event.target)) {
+            cancel();
+        }
+    }
+});
 
 /* ========================================
    START PORTFOLIO
