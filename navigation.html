@@ -1,44 +1,6 @@
-<!-- 
- <link rel="stylesheet" href="Style/style.css">
-<div class="nav-container">
-      <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
-        
-        <div style="display: flex; justify-content: flex-start; align-items: center; gap: 15px;">
-      <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #d9ec0bcc, #7c5f09); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 24px;">
-        A
-      </div>
-      <h2 style="margin: 0; font-size: 24px; font-weight: 600;">Ashwini Bambale</h2>
-    </div>
-      </div>
-      <div class="links">
-        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="#home" >Home</a></div>
-        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#about">About</a></div>
-        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#skills">Skills</a></div>
-        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#resume">Experience</a></div>
-        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#experience-projects">Projects</a></div>
-       <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#software">Software</a></div>       
-        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#services">Services</a></div>
-
-        <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="#contact">Contact Us</a></div>
-      </div>
-      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-    </div>
-    
-    <div class="dropdown">
-  <div class="links">
-    <a href="#home" onclick="cancel()">Home</a>
-    <a href="#about" onclick="cancel()">About</a>
-    <a href="#resume" onclick="cancel()">Resume</a>
-    <a href="#skills" onclick="cancel()">Skills</a>
-    <a href="#services" onclick="cancel()">Services</a>
-    <a href="#contact" onclick="cancel()">Contact Us</a>
-    <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-  </div>
-</div> -->
 
 
-
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="Style/style.css">
 
 <nav>
   <div class="nav-container">
@@ -65,7 +27,9 @@
     </div>
     
     <!-- Hamburger Menu Icon -->
-    <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+    <i class="fa-solid fa-bars hamburg" onclick="hamburg()" aria-label="Open navigation menu"
+   role="button"
+   tabindex="0"></i>
   </div>
 </nav>
 
@@ -81,6 +45,8 @@
     <a href="#software" onclick="cancel()"><i class="fa-solid fa-laptop-code"></i> Software</a>
     <a href="#services" onclick="cancel()"><i class="fa-solid fa-handshake"></i> Services</a>
     <a href="#contact" onclick="cancel()"><i class="fa-solid fa-envelope"></i> Contact Us</a>
-    <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+    <i class="fa-solid fa-xmark cancel" onclick="cancel()" aria-label="Close navigation menu"
+   role="button"
+   tabindex="0"></i>
   </div>
 </div>
